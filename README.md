@@ -5,7 +5,7 @@ Base of my personal ZSH environment.
 install zsh, install fzf
 
 ```
-zsh -c "$(curl -s https://raw.githubusercontent.com/ronivay/zsh/master/install.sh)"
+sh -c "$(curl -s https://raw.githubusercontent.com/ronivay/zsh/master/install.sh)"
 ```
 
 

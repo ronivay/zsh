@@ -1,8 +1,7 @@
-#!/bin/zsh
+#!/bin/sh
 
-set -e
+set -eu
 
-ZDIR="$HOME/.config/zsh"
 source "$ZDIR/zsh-config"
 
 for PLUGIN in ${zsh_plugins[@]}; do
