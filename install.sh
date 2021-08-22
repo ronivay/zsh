@@ -14,4 +14,5 @@ EOF
 
 chsh -s $(command -v zsh)
 
-exec zsh
+echo "Done"
+echo "run exec zsh"
