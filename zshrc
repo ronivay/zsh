@@ -18,9 +18,7 @@ source "$ZDIR/zsh-config"
 zsh_add_plugins
 zsh_add_ohmyzsh_plugins
 zsh_add_files
-
-zsh_add_theme "romkatv/powerlevel10k"
-
+zsh_add_theme
 
 # fzf key bindings
 # Debian
