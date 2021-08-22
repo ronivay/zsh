@@ -22,4 +22,4 @@ if [ -n $zsh_theme ]; then
 	if ! [ -d "$ZDIR/themes/${zsh_theme##*/}" ]; then
 		git clone "https://github.com/$zsh_theme.git" "$ZDIR/themes/${zsh_theme##*/}"
 	fi
-}
+fi
