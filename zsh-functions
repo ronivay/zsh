@@ -1,0 +1,41 @@
+# Function to source files if they exist
+function zsh_add_file() {
+	[ -f "$ZDIR/$1" ] && source "$ZDIR/$1"
+}
+
+function zsh_add_files() {
+	for FILE in ${zsh_files[@]}; do
+		zsh_add_file "$FILE"
+	done
+}
+
+function zsh_add_plugins() {
+	for PLUGIN in ${zsh_plugins[@]##*/}; do
+	if [ -d "$ZDIR/plugins/$PLUGIN" ]; then
+		zsh_add_file "plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
+		zsh_add_file "plugins/$PLUGIN/$PLUGIN.zsh"
+	else
+		echo "plugin $PLUGIN not found, run $(dirname $0)/prep.sh first"
+	fi
+	done
+}
+
+function zsh_add_ohmyzsh_plugins() {
+	for PLUGIN in ${zsh_ohmyzsh_plugins[@]}; do
+	if [ -d "$ZDIR/plugins/ohmyzsh/plugins/$PLUGIN" ]; then
+		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
+		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.zsh"
+	else
+		echo "plugin $PLUGIN not found, run $(dirname $0)/prep.sh first"
+	fi
+	done
+}
+
+function zsh_add_theme() {
+	if [ -d "$ZDIR/themes/${zsh_theme##*/}" ]; then
+		zsh_add_file "themes/${zsh_theme##*/}/${zsh_theme##*/}.zsh-theme"
+	else
+		git clone "https://github.com/$zsh_theme.git" "$ZDIR/themes/${zsh_theme##*/}"
+	fi
+}
+

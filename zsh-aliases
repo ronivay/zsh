@@ -1,0 +1,5 @@
+#!/bin/sh
+
+alias h='history'
+alias hs='history | grep -i'
+alias history='history 1'

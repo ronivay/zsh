@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# theme config
+source $ZDIR/powerlevel10k
+
+# save more history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+# linux style ls colors
+export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+
+# autosuggest settings
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+#unset ZSH_AUTOSUGGEST_USE_ASYNC
