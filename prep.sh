@@ -17,3 +17,9 @@ if [ ${#zsh_ohmyzsh_plugins[@]} -gt 0 ]; then
 		git clone "https://github.com/ohmyzsh/ohmyzsh.git" "$ZDIR/plugins/ohmyzsh"
 	fi
 fi
+
+if [ -n $zsh_theme ]; then
+	if ! [ -d "$ZDIR/themes/${zsh_theme##*/}" ]; then
+		git clone "https://github.com/$zsh_theme.git" "$ZDIR/themes/${zsh_theme##*/}"
+	fi
+}
