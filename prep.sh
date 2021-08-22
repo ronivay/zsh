@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 set -e
 
@@ -12,7 +12,7 @@ for PLUGIN in ${zsh_plugins[@]}; do
 	fi
 done
 
-if [ -n $zsh_ohmyzsh_plugins ]; then
+if [ ${#zsh_ohmyzsh_plugins[@]} -gt 0 ]; then
 	if ! [ -d $ZDIR/plugins/ohmyzsh ]; then
 		mkdir -p "$ZDIR/plugins"
 		git clone "https://github.com/ohmyzsh/ohmyzsh.git" "$ZDIR/plugins/ohmyzsh"
