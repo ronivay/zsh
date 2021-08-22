@@ -25,7 +25,6 @@ zsh_add_theme
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 # OSX, fzf from homebrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-compinit
 
 # generic key bindings
 # override CTRL-R that comes from fzf.zsh to the one in zsh-navigation-tools
