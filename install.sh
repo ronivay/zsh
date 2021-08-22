@@ -9,18 +9,23 @@ ZDIR=$HOME/.config/zsh
 
 if ! [ -d $ZDIR ]; then
 	echo "Cloning https://github.com/ronivay/zsh to $ZDIR"
-	git clone "https://github.com/ronivay/zsh" $ZDIR >/dev/null
+	echo
+	git clone "https://github.com/ronivay/zsh" $ZDIR
+	echo
 	echo "Installing default plugins and theme"
-	zsh $ZDIR/prep.sh >/dev/null
+	zsh $ZDIR/prep.sh
 fi
 
+echo
 echo "Adding config to ~/.zshrc"
 cat <<'EOF' >> $HOME/.zshrc
 export ZDIR=$HOME/.config/zsh
 source $ZDIR/zshrc
 EOF
 
+echo
 echo "Changing default shell to zsh"
 chsh -s $(command -v zsh)
 
+echo
 echo "Done. Restart shell to load"
