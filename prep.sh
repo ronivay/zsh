@@ -3,7 +3,7 @@
 set -e
 
 ZDIR="$HOME/.config/zsh"
-source "$ZDIR/zsh-plugins"
+source "$ZDIR/zsh-config"
 
 for PLUGIN in ${zsh_plugins[@]}; do
 	if ! [ -d $ZDIR/plugins/${PLUGIN##*/} ]; then
