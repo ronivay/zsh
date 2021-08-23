@@ -10,12 +10,14 @@ function zsh_add_files() {
 }
 
 function zsh_add_plugins() {
-	for PLUGIN in ${zsh_plugins[@]##*/}; do
-	if [ -d "$ZDIR/plugins/$PLUGIN" ]; then
-		zsh_add_file "plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
-		zsh_add_file "plugins/$PLUGIN/$PLUGIN.zsh"
+	for PLUGIN in ${zsh_plugins[@]}; do
+	if [ -d "$ZDIR/plugins/${PLUGIN##*/}" ]; then
+		zsh_add_file "plugins/${PLUGIN##*/}/${PLUGIN##*/}.plugin.zsh" || \
+		zsh_add_file "plugins/${PLUGIN##*/}/${PLUGIN##*/}.zsh"
 	else
-		echo "plugin $PLUGIN not found, run $(dirname $0)/prep.sh first"
+		git clone "https://github.com/$PLUGIN.git" "$ZDIR/plugins/${PLUGIN##*/}" > /dev/null
+		zsh_add_file "plugins/${PLUGIN##*/}/${PLUGIN##*/}.plugin.zsh" || \
+		zsh_add_file "plugins/${PLUGIN##*/}/${PLUGIN##*/}.zsh"
 	fi
 	done
 }
@@ -26,7 +28,11 @@ function zsh_add_ohmyzsh_plugins() {
 		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
 		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.zsh"
 	else
-		echo "plugin $PLUGIN not found, run $(dirname $0)/prep.sh first"
+		if ! [ -d "$ZDIR/plugins/ohmyzsh" ]; then
+			git clone "https://github.com/ohmyzsh/ohmyzsh.git" "$ZDIR/plugins/ohmyzsh"
+		fi
+		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
+		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.zsh"
 	fi
 	done
 }
@@ -35,7 +41,8 @@ function zsh_add_theme() {
 	if [ -d "$ZDIR/themes/${zsh_theme##*/}" ]; then
 		zsh_add_file "themes/${zsh_theme##*/}/${zsh_theme##*/}.zsh-theme"
 	else
-		echo "theme $zsh_theme not found, run $(dirname $0)prep.sh first"
+		git clone "https://github.com/$zsh_theme.git" "$ZDIR/themes/${zsh_theme##*/}" > /dev/null
+		zsh_add_file "themes/${zsh_theme##*/}/${zsh_theme##*/}.zsh-theme"
 	fi
 }
 
