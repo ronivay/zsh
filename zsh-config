@@ -1,4 +1,22 @@
-zsh_plugins=(zsh-users/zsh-autosuggestions changyuheng/zsh-interactive-cd psprint/zsh-navigation-tools)
-zsh_ohmyzsh_plugins=(git-auto-fetch copyfile jsontools z)
-zsh_files=(zsh-functions.private zsh-exports zsh-aliases zsh-exports.private zsh-aliases.private)
+zsh_plugins=(
+zsh-users/zsh-autosuggestions
+changyuheng/zsh-interactive-cd
+psprint/zsh-navigation-tools
+)
+
+zsh_ohmyzsh_plugins=(
+git-auto-fetch
+copyfile
+jsontools
+z
+)
+
+zsh_files=(
+zsh-functions.private
+zsh-exports
+zsh-aliases
+zsh-exports.private
+zsh-aliases.private
+)
+
 zsh_theme="romkatv/powerlevel10k"
