@@ -3,3 +3,21 @@
 alias h='history'
 alias hs='history | grep -i'
 alias history='history 1'
+
+alias grep='grep --color=auto'
+
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
+
+case "$(uname -s)" in
+
+Darwin)
+	alias ls='ls -G'
+	;;
+Linux)
+	alias ls='ls --color=auto'
+	;;
+*)
+	;;
+esac
