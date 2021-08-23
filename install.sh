@@ -2,25 +2,25 @@
 
 set -ae
 
-ZDOTDIR=$HOME/.config/zsh
+ZDIR=$HOME/.config/zsh
 
 [ ! $(command -v zsh) ] && { echo "install zsh first" ; exit 1; }
 [ ! $(command -v git) ] && { echo "install git first" ; exit 1; }
 
-if ! [ -d $ZDOTDIR ]; then
-	echo "+++ Cloning https://github.com/ronivay/zsh to $ZDOTDIR"
+if ! [ -d $ZDIR ]; then
+	echo "+++ Cloning https://github.com/ronivay/zsh to $ZDIR"
 	echo
-	git clone "https://github.com/ronivay/zsh" $ZDOTDIR
+	git clone "https://github.com/ronivay/zsh" $ZDIR
 	echo "+++ Installing default plugins and theme"
 	echo
-	zsh $ZDOTDIR/prep.sh
+	zsh $ZDIR/prep.sh
 fi
 
 echo
 echo "+++ Adding config to ~/.zshrc"
 cat <<'EOF' >> $HOME/.zshrc
-export ZDOTDIR=$HOME/.config/zsh
-source $ZDOTDIR/zshrc
+export ZDIR=$HOME/.config/zsh
+source $ZDIR/zshrc
 EOF
 
 echo

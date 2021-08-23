@@ -12,8 +12,8 @@ zmodload zsh/complist
  compinit
 _comp_options+=(globdots)
 
-source "$ZDOTDIR/zsh-functions"
-source "$ZDOTDIR/zsh-config"
+source "$ZDIR/zsh-functions"
+source "$ZDIR/zsh-config"
 
 zsh_add_plugins
 zsh_add_ohmyzsh_plugins

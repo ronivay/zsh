@@ -1,6 +1,6 @@
 # Function to source files if they exist
 function zsh_add_file() {
-	[ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+	[ -f "$ZDIR/$1" ] && source "$ZDIR/$1"
 }
 
 function zsh_add_files() {
@@ -11,7 +11,7 @@ function zsh_add_files() {
 
 function zsh_add_plugins() {
 	for PLUGIN in ${zsh_plugins[@]##*/}; do
-	if [ -d "$ZDOTDIR/plugins/$PLUGIN" ]; then
+	if [ -d "$ZDIR/plugins/$PLUGIN" ]; then
 		zsh_add_file "plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
 		zsh_add_file "plugins/$PLUGIN/$PLUGIN.zsh"
 	else
@@ -22,7 +22,7 @@ function zsh_add_plugins() {
 
 function zsh_add_ohmyzsh_plugins() {
 	for PLUGIN in ${zsh_ohmyzsh_plugins[@]}; do
-	if [ -d "$ZDOTDIR/plugins/ohmyzsh/plugins/$PLUGIN" ]; then
+	if [ -d "$ZDIR/plugins/ohmyzsh/plugins/$PLUGIN" ]; then
 		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.plugin.zsh" || \
 		zsh_add_file "plugins/ohmyzsh/plugins/$PLUGIN/$PLUGIN.zsh"
 	else
@@ -32,7 +32,7 @@ function zsh_add_ohmyzsh_plugins() {
 }
 
 function zsh_add_theme() {
-	if [ -d "$ZDOTDIR/themes/${zsh_theme##*/}" ]; then
+	if [ -d "$ZDIR/themes/${zsh_theme##*/}" ]; then
 		zsh_add_file "themes/${zsh_theme##*/}/${zsh_theme##*/}.zsh-theme"
 	else
 		echo "theme $zsh_theme not found, run $(dirname $0)prep.sh first"
