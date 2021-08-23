@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # theme config
-source $ZDIR/powerlevel10k
+source $ZDOTDIR/powerlevel10k
 
 # save more history
 HISTFILE=$HOME/.zsh_history
