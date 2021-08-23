@@ -45,7 +45,7 @@ function zsh_add_ohmyzsh_libs() {
 		if ! [ -d "$ZDIR/plugins/ohmyzsh" ]; then
 			git clone "https://github.com/ohmyzsh/ohmyzsh.git" "$ZDIR/plugins/ohmyzsh"
 		fi
-		zsh_add_file "plugins/ohmyzsh/lib/$OHLIB.zsh
+		zsh_add_file "plugins/ohmyzsh/lib/$OHLIB.zsh"
 	fi
 	done
 }
