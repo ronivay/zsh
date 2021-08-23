@@ -19,6 +19,8 @@ see: https://brew.sh
 zsh is the default shell already in newer OSX
 ```
 
+Run install script:
+
 ```
 zsh -c "$(curl -s https://raw.githubusercontent.com/ronivay/zsh/master/install.sh)"
 ```
