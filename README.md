@@ -17,6 +17,7 @@ brew install fzf
 see: https://brew.sh
 
 zsh is the default shell already in newer OSX
+```
 
 ```
 zsh -c "$(curl -s https://raw.githubusercontent.com/ronivay/zsh/master/install.sh)"
