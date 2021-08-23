@@ -11,6 +11,10 @@ jsontools
 z
 )
 
+zsh_ohmyzsh_libs=(
+clipboard
+)
+
 zsh_files=(
 zsh-functions.private
 zsh-exports
