@@ -2,6 +2,7 @@ zsh_plugins=(
 zsh-users/zsh-autosuggestions
 changyuheng/zsh-interactive-cd
 psprint/zsh-navigation-tools
+mroth/git-prompt-useremail
 )
 
 zsh_ohmyzsh_plugins=(
