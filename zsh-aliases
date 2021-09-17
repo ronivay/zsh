@@ -2,7 +2,7 @@
 
 alias h='history'
 alias hs='history | grep -i'
-alias history='history 1'
+alias history='history -D 1'
 
 alias grep='grep --color=auto'
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-setopt autocd extendedglob nomatch menucomplete interactive_comments
+setopt autocd extendedglob nomatch menucomplete interactive_comments inc_append_history_time
 unsetopt BEEP
 autoload -Uz colors && colors
 
