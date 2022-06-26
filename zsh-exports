@@ -5,8 +5,8 @@ source $ZDIR/powerlevel10k
 
 # save more history
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # linux style ls colors
 export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
